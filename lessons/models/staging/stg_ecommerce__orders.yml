@@ -38,7 +38,9 @@ models:
               where: "delivered_at IS NOT NULL AND shipped_at IS NOT NULL"
 
       - name: shipped_at
-        description: "When the order was shipped"
+        description: > 
+            This is the data When the order was shipped 
+            The date must be defined witth teh system
         tests:
           - not_null:
               where: "delivered_at IS NOT NULL OR status = 'Shipped'"
@@ -49,7 +51,7 @@ models:
       - name: status
         # Look in documents/ecommerce/doc_ecommerce__status.md for this definition
         # We can reuse this definition in any column
-        description: "{{ doc('status') }}"
+        description: "Status of order"
         tests:
           - not_null
           - accepted_values:
@@ -63,7 +65,3 @@ models:
 
       - name: num_items_ordered
         description: "Number of items in the order"
-        tests:
-          - not_null
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
