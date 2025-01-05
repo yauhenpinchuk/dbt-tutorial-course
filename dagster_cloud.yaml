@@ -1,0 +1,4 @@
+locations:
+- code_source:
+    module_name: lessons_dagster.definitions
+  location_name: lessons_dagster
