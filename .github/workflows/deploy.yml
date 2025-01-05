@@ -49,8 +49,8 @@ jobs:
           cd project-repo
           pip install . --upgrade --upgrade-strategy eager
           dagster-dbt project prepare-and-package --file lessons_dagster/project.py
-          
-  shell: bash
+        shell: bash          
+  
       - name: Python Executable Deploy
         if: steps.prerun.outputs.result == 'pex-deploy'
         uses: dagster-io/dagster-cloud-action/actions/build_deploy_python_executable@v0.1
