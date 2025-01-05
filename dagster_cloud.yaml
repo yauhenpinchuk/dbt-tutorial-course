@@ -1,4 +1,4 @@
 locations:
 - code_source:
-    module_name: lessons_dagster.definitions
+    module_name: lessons_dagster.lessons_dagster.definitions
   location_name: lessons_dagster
